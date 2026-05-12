@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personalanfrage senden | GALDORA Recruiting</title>
+  <meta name="description" content="Senden Sie Ihre Personalanfrage an GALDORA. Wir melden uns schnellstm&#246;glich mit passenden L&#246;sungen f&#252;r Ihre Personalsuche." />
+
+  <style>
+    :root {
+      --blue: #152348;
+      --blue-dark: #0f1a36;
+      --blue-soft: #eef1f8;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #ffffff;
+      --section: #f7f9fc;
+      --card: #ffffff;
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+      --radius: 4px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--blue);
+      border-bottom: 1px solid var(--blue);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: .3px;
+    }
+
+    .logo-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 3px;
+      background: var(--blue);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      box-shadow: 0 10px 25px rgba(11,99,206,.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: white;
+      font-size: 15px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 3px;
+      background: var(--blue);
+      color: white;
+      padding: 14px 22px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s ease;
+      box-shadow: 0 12px 30px rgba(11,99,206,.22);
+    }
+
+    .btn:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      background: white;
+      color: var(--blue);
+      box-shadow: none;
+    }
+
+    .nav-cta:hover {
+      background: #f3f5f9;
+      color: var(--blue);
+    }
+
+    .btn.secondary {
+      background: white;
+      color: var(--blue);
+      border: 1px solid #cfe2ff;
+      box-shadow: none;
+    }
+
+    .top-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+        url('Hero-background.png') center/cover no-repeat;
+    }
+
+    .top-split-left {
+      padding: 80px 60px 80px max(20px, calc((100vw - 1120px) / 2));
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .top-split-right {
+      padding: 80px max(20px, calc((100vw - 1120px) / 2)) 80px 60px;
+      background-color: transparent;
+    }
+
+    @media (max-width: 960px) {
+      .top-split {
+        grid-template-columns: 1fr;
+      }
+      .top-split-left {
+        padding: 60px 20px;
+      }
+      .top-split-right {
+        padding: 60px 20px;
+      }
+    }
+
+    .hero-content {
+      text-align: left;
+    }
+    
+    .hero-content .badge {
+      margin: 0 0 20px;
+    }
+
+    .hero-content .lead {
+      margin: 0 0 30px;
+    }
+
+    .hero-content .hero-actions,
+    .hero-content .trust {
+      justify-content: flex-start;
+    }
+
+    .split-form {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .split-form h2 {
+      font-size: 26px;
+      margin-bottom: 8px;
+      letter-spacing: -.5px;
+      text-align: left;
+    }
+
+    .split-form p.form-desc {
+      color: var(--muted);
+      margin-bottom: 22px;
+      text-align: left;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 3px;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(24px, 3.5vw, 36px);
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      margin-bottom: 22px;
+    }
+
+    .lead {
+      font-size: 21px;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.5;
+      max-width: 620px;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: #374151;
+      font-size: 15px;
+    }
+
+    .trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .trust span::before {
+      content: "\2713";
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .form-card {
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(229,231,235,.95);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+      backdrop-filter: blur(16px);
+    }
+
+    .form-card h2 {
+      font-size: 26px;
+      margin-bottom: 8px;
+      letter-spacing: -.5px;
+    }
+
+    .form-card p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #374151;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 14px 15px;
+      font: inherit;
+      background: white;
+      color: var(--text);
+      outline: none;
+      transition: .2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(11,99,206,.12);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .privacy {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .privacy a {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-muted {
+      background: var(--section);
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 38px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .benefits-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: grid;
+      gap: 26px;
+      max-width: 800px;
+    }
+
+    .benefits-list > li {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .benefits-list .icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .benefits-list .text {
+      flex-grow: 1;
+      font-size: 17.5px;
+      color: var(--text);
+      line-height: 1.55;
+      padding-top: 0;
+    }
+
+    .benefits-list .text p:first-of-type {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .benefits-list .text p {
+      margin-bottom: 0;
+    }
+
+    .benefits-list .text .sub-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .benefits-list .text .sub-list li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .benefits-list .text .sub-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.05);
+    }
+
+    .icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 3px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin-bottom: 9px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 3px;
+      background: var(--blue);
+      color: white;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .cta-strip {
+      background: var(--blue);
+      color: white;
+      border-radius: 4px;
+      padding: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .cta-strip h2 {
+      font-size: 34px;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .cta-strip p {
+      color: rgba(255,255,255,.82);
+    }
+
+    .cta-strip .btn {
+      background: white;
+      color: var(--blue);
+      box-shadow: none;
+      white-space: nowrap;
+    }
+
+    .galdora-footer {
+      background: var(--blue);
+      color: white;
+      padding: 52px 0 36px;
+    }
+
+    .galdora-footer a {
+      color: white;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1.25fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .footer-logo {
+      max-width: 320px;
+      margin-bottom: 28px;
+    }
+
+    .footer-logo-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 46px;
+      font-weight: 800;
+      letter-spacing: 10px;
+      line-height: 1;
+    }
+
+    .footer-logo-g {
+      width: 70px;
+      height: 70px;
+      background: white;
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .footer-claim {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 7px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    .footer-line {
+      height: 8px;
+      width: 210px;
+      background: white;
+      display: inline-block;
+    }
+
+    .footer-menu {
+      display: grid;
+      gap: 13px;
+      font-size: 18px;
+    }
+
+    .footer-company h3 {
+      font-size: 25px;
+      line-height: 1.1;
+      margin-bottom: 28px;
+      letter-spacing: .5px;
+    }
+
+    .footer-contact {
+      display: grid;
+      gap: 14px;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .footer-kununu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .kununu-link {
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -8px;
+    }
+
+    .footer-bottom {
+      background: #181818;
+      color: white;
+      padding: 18px 0 16px;
+      font-size: 18px;
+    }
+
+    .footer-bottom a {
+      color: white;
+    }
+
+    .footer-bottom p {
+      margin-top: 8px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+
+    .header-logo-img {
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-logo-img {
+      width: min(420px, 100%);
+      height: auto;
+      display: block;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 860px) {
+      .cards,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .two {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-strip {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        align-items: start;
+      }
+
+      .footer-logo-mark {
+        font-size: 34px;
+        letter-spacing: 7px;
+      }
+
+      .footer-logo-g {
+        width: 56px;
+        height: 56px;
+        font-size: 42px;
+      }
+
+      .footer-line {
+        width: 170px;
+      }
+
+      .footer-kununu {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a href="https://galdora-recruiting.de/" class="brand" aria-label="GALDORA Recruiting">
+        <img src="galdora-logo.png" alt="GALDORA Recruiting" class="header-logo-img" />
+      </a>
+
+      <nav class="nav-links">
+        <a href="#vorteile">Vorteile</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#anfrage">Anfrage senden</a>
+      </nav>
+
+      <a class="btn nav-cta" href="#anfrage">Personalanfrage</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="top-split">
+      <div class="top-split-left">
+        <div class="hero-content">
+          <h1>Ihr Personaldienstleister f&#252;r <br>kaufm&#228;nnische Fach- &amp; F&#252;hrungskr&#228;fte im Ruhrgebiet</h1>
+          <p class="lead">
+            Wir besetzen Ihre individuellen Vakanzen. Gezielte Suche und flexible L&#246;sungen f&#252;r Ihren Bedarf. Mit uns zum Volltreffer bei Ihrer Personalsuche
+          </p>
+        </div>
+
+        <div class="copywriting-content">
+
+          <ul class="benefits-list" style="margin: 0; max-width: none;">
+            <li>
+              <div class="icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div class="text">
+                <p>Lernen Sie qualifizierte Kandidaten im kaufm&#228;nnischen Bereich kennen:</p>
+                <ul class="sub-list">
+                  <li>Office: Vertriebsinnendienst, Customer Service, Auftragssachbearbeitung, Assistenz, Einkauf, Personalwesen, Empfang, Export, Logistik</li>
+                  <li>Buchhaltung: Finanzbuchhalter, Kreditorenbuchhalter, Bilanzbuchhalter, Lohnbuchhalter, Controller</li>
+                </ul>
+              </div>
+            </li>
+            
+            <li>
+              <div class="icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              </div>
+              <div class="text">
+                <p>Wir besetzen Ihre individuellen Vakanzen im Rahmen der direkten Personalvermittlung oder der Arbeitnehmer&#252;berlassung</p>
+              </div>
+            </li>
+            
+            <li>
+              <div class="icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              </div>
+              <div class="text">
+                <p>Durch unsere Erfahrung und unser stetig wachsendes Netzwerk rekrutieren wir f&#252;r Sie die besten verf&#252;gbaren Kandidaten f&#252;r Ihre Projekte.</p>
+              </div>
+            </li>
+            
+            <li>
+              <div class="icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              </div>
+              <div class="text">
+                <p>Hohe &#220;bernahmequote: ca.78 % unserer Zeitarbeitskr&#228;ften, werden in eine Festanstellung &#252;bernommen.</p>
+              </div>
+            </li>
+            
+            <li>
+              <div class="icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+              </div>
+              <div class="text">
+                <p>&#8222;Acht von zehn vermittelten Kandidaten bleiben langfristig im Kundenbetrieb besch&#228;ftigt.&#8220;</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="top-split-right" id="anfrage">
+        <div class="split-form">
+          <h2>Jetzt unverbindlich anfragen</h2>
+          <p class="form-desc">Gerne auch telefonisch unter: <a href="tel:+4921598217570" style="color: var(--blue); font-weight: 700; text-decoration: none;">02159 8217570</a></p>
+
+          <form id="lead-form">
+            <div class="two">
+              <div class="field">
+                <label for="name">Name *</label>
+                <input id="name" name="name" type="text" placeholder="Max Mustermann" required />
+              </div>
+
+              <div class="field">
+                <label for="company">Unternehmen *</label>
+                <input id="company" name="company" type="text" placeholder="Muster GmbH" required />
+              </div>
+            </div>
+
+            <div class="two">
+              <div class="field">
+                <label for="email">E-Mail *</label>
+                <input id="email" name="email" type="email" placeholder="name@unternehmen.de" required />
+              </div>
+
+              <div class="field">
+                <label for="phone">Telefon</label>
+                <input id="phone" name="phone" type="tel" placeholder="+49 ..." />
+              </div>
+            </div>
+
+            <div class="two">
+              <div class="field">
+                <label for="role">Gesuchte Position</label>
+                <input id="role" name="role" type="text" placeholder="z. B. Sachbearbeiter, IT-Admin" />
+              </div>
+
+              <div class="field">
+                <label for="model">Personalmodell</label>
+                <select id="model" name="model">
+                  <option value="">Bitte ausw&#228;hlen</option>
+                  <option>Direktvermittlung</option>
+                  <option>Arbeitnehmer&#252;berlassung</option>
+                  <option>Try &amp; Hire</option>
+                  <option>Noch offen</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="tasks">Aufgaben der Position</label>
+              <textarea id="tasks" name="tasks" placeholder="Welche Aufgaben soll die gesuchte Fach- oder F&#252;hrungskraft &#252;bernehmen?" style="min-height:150px;"></textarea>
+            </div>
+
+            <div class="field">
+              <label for="job-description">Stellenbeschreibung hochladen</label>
+              <input id="job-description" name="job_description" type="file" accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg" />
+            </div>
+
+            <div class="field">
+              <label for="message">Ihre Anfrage</label>
+              <textarea id="message" name="message" placeholder="Welche Position m&#246;chten Sie besetzen? Ab wann? Welche Anforderungen sind wichtig?"></textarea>
+            </div>
+
+            <button class="btn" type="submit" id="submit-btn">Anfrage absenden</button>
+
+            <p class="privacy">
+              Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben zur Kontaktaufnahme zu.
+              Details finden Sie in der <a href="/datenschutz">Datenschutzerkl&#228;rung</a>.
+            </p>
+          </form>
+
+          <div id="form-success" style="display:none;padding:28px;background:#eef1f8;border-left:5px solid #152348;border-radius:3px;">
+            <p style="font-weight:700;font-size:18px;color:#152348;margin:0 0 8px;">Anfrage erfolgreich gesendet!</p>
+            <p style="color:#374151;margin:0;">Vielen Dank. Wir melden uns schnellstm&#246;glich bei Ihnen. Bitte pr&#252;fen Sie auch Ihren Posteingang &#8212; Sie haben soeben eine Best&#228;tigung erhalten.</p>
+          </div>
+
+          <div id="form-error" style="display:none;padding:20px;background:#fff0f0;border-left:5px solid #c0392b;border-radius:3px;">
+            <p style="font-weight:700;color:#c0392b;margin:0 0 6px;">Fehler beim Senden.</p>
+            <p style="color:#374151;margin:0;">Bitte versuchen Sie es erneut oder schreiben Sie uns direkt: <a href="mailto:mail@galdora.de" style="color:#152348;font-weight:700;">mail@galdora.de</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="vorteile">
+      <div class="container">
+        <div class="section-head">
+          <h2>Warum GALDORA?</h2>
+          <p>Gezielte Unterst&#252;tzung bei der Personalsuche &#8212; schnell, pers&#246;nlich und passend zu Ihrem Bedarf.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>Passende Kandidaten</h3>
+            <p>Wir pr&#252;fen Anforderungen gezielt und bringen Unternehmen mit geeigneten Fach- und F&#252;hrungskr&#228;ften zusammen.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>Flexible Modelle</h3>
+            <p>Direktvermittlung, Arbeitnehmer&#252;berlassung oder Try &amp; Hire &#8212; abh&#228;ngig davon, was zu Ihrer Situation passt.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">03</div>
+            <h3>Schnelle Abstimmung</h3>
+            <p>Nach Ihrer Anfrage melden wir uns zeitnah, kl&#228;ren Details und starten zielgerichtet mit der Suche.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-muted" id="ablauf">
+      <div class="container">
+        <div class="section-head">
+          <h2>So l&#228;uft es ab</h2>
+          <p>Einfacher Prozess f&#252;r Ihre n&#228;chste Personalanfrage.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <h3>Anfrage senden</h3>
+            <p>Sie &#252;bermitteln uns die wichtigsten Eckdaten zur offenen Position.</p>
+          </div>
+
+          <div class="step">
+            <h3>Bedarf kl&#228;ren</h3>
+            <p>Wir melden uns und besprechen Anforderungen, Zeitraum und passendes Modell.</p>
+          </div>
+
+          <div class="step">
+            <h3>Kandidaten erhalten</h3>
+            <p>Sie bekommen passende Profile und entscheiden &#252;ber die n&#228;chsten Schritte.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-strip">
+          <div>
+            <h2>Offene Stelle zu besetzen?</h2>
+            <p>Senden Sie jetzt Ihre Personalanfrage an GALDORA.</p>
+          </div>
+          <a class="btn" href="#anfrage">Zum Formular</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="galdora-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="https://galdora-recruiting.de/" class="footer-logo" aria-label="GALDORA Recruiting Startseite">
+            <img src="galdora-logo.png" alt="GALDORA Recruiting" class="footer-logo-img" />
+          </a>
+
+          <nav class="footer-menu" aria-label="Footer Navigation">
+            <a href="https://galdora-recruiting.de/">Startseite</a>
+            <a href="https://galdora-recruiting.de/fuer-bewerber">F&#252;r Bewerber</a>
+            <a href="https://galdora-recruiting.de/fuer-unternehmen">F&#252;r Unternehmen</a>
+            <a href="https://galdora-recruiting.de/kontakt">Kontakt</a>
+          </nav>
+        </div>
+
+        <div class="footer-company">
+          <h3>GALDORA Personalmanagement<br>GmbH &amp; Co. KG</h3>
+
+          <div class="footer-contact">
+            <div>Meerbuscher Str. 66<br>40670 Meerbusch</div>
+            <a href="tel:+4921598217570">&#9742;&nbsp;&nbsp;02159 8217570</a>
+            <a href="mailto:mail@galdora.de">&#9993;&nbsp;&nbsp;mail@galdora.de</a>
+          </div>
+        </div>
+
+        <div class="footer-kununu">
+          <a class="kununu-link" href="https://www.kununu.com/de/galdora-personalmanagement1" target="_blank" rel="noopener" aria-label="GALDORA auf kununu ansehen">k</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div>
+          <a href="https://galdora-recruiting.de/impressum">Impressum</a>
+          <span>|</span>
+          <a href="https://galdora-recruiting.de/datenschutz">Datenschutz</a>
+        </div>
+        <p>&#169; 2025 Galdora-Recruiting</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const WEBHOOK_URL = 'https://lennyys.app.n8n.cloud/webhook/c7f2c55d-c880-42f1-87fb-42244ca44d07';
+
+    document.getElementById('lead-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Wird gesendet…';
+
+      const fileInput = document.getElementById('job-description');
+      const formData = new FormData();
+      formData.append('name', document.getElementById('name').value.trim());
+      formData.append('company', document.getElementById('company').value.trim());
+      formData.append('email', document.getElementById('email').value.trim());
+      formData.append('phone', document.getElementById('phone').value.trim());
+      formData.append('role', document.getElementById('role').value.trim());
+      formData.append('model', document.getElementById('model').value);
+      formData.append('tasks', document.getElementById('tasks').value.trim());
+      formData.append('message', document.getElementById('message').value.trim());
+
+      if (fileInput.files.length > 0) {
+        formData.append('job_description', fileInput.files[0]);
+      }
+
+      try {
+        const res = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (res.ok) {
+          document.getElementById('lead-form').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        document.getElementById('form-error').style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Anfrage absenden';
+      }
+    });
+  </script>
+</body>
+</html>
