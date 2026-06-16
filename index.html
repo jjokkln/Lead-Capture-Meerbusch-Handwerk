@@ -132,9 +132,13 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       min-height: 100vh;
-      background:
-        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-        url('Hero-background.png') center/cover no-repeat;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.64)),
+        url('Hero-background.png');
+      background-position: center, 50% center;
+      background-size: auto, cover;
+      background-repeat: repeat, no-repeat;
+      background-attachment: scroll, fixed;
     }
 
     .top-split-left {
@@ -152,6 +156,7 @@
     @media (max-width: 960px) {
       .top-split {
         grid-template-columns: 1fr;
+        background-attachment: scroll, scroll;
       }
 
       .top-split-left {
@@ -349,6 +354,96 @@
 
     section {
       padding: 70px 0;
+    }
+
+    .image-slideshow {
+      min-height: clamp(360px, 72vh, 760px);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background: var(--section);
+    }
+
+    .image-slideshow::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.64));
+    }
+
+    .image-slideshow__frame {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: saturate(0.96) contrast(1.02);
+      transform: scale(1.035);
+      animation: galdora-image-slideshow 16s cubic-bezier(.4, 0, .2, 1) infinite;
+      will-change: opacity, transform;
+    }
+
+    .image-slideshow__frame:nth-child(1) {
+      background-image: url('slideshow-assets/9327.png');
+      animation-delay: 0s;
+    }
+
+    .image-slideshow__frame:nth-child(2) {
+      background-image: url('slideshow-assets/84746.png');
+      animation-delay: 2s;
+    }
+
+    .image-slideshow__frame:nth-child(3) {
+      background-image: url('slideshow-assets/81739.png');
+      animation-delay: 4s;
+    }
+
+    .image-slideshow__frame:nth-child(4) {
+      background-image: url('slideshow-assets/27138.png');
+      animation-delay: 6s;
+    }
+
+    .image-slideshow__frame:nth-child(5) {
+      background-image: url('slideshow-assets/63629.png');
+      animation-delay: 8s;
+    }
+
+    .image-slideshow__frame:nth-child(6) {
+      background-image: url('slideshow-assets/17970.png');
+      animation-delay: 10s;
+    }
+
+    .image-slideshow__frame:nth-child(7) {
+      background-image: url('slideshow-assets/41060.png');
+      animation-delay: 12s;
+    }
+
+    .image-slideshow__frame:nth-child(8) {
+      background-image: url('slideshow-assets/23051.png');
+      animation-delay: 14s;
+    }
+
+    @keyframes galdora-image-slideshow {
+      0%,
+      100% {
+        opacity: 0;
+        transform: scale(1.035);
+      }
+
+      2.5%,
+      12.5% {
+        opacity: 1;
+      }
+
+      15% {
+        opacity: 0;
+        transform: scale(1.01);
+      }
     }
 
     .section-muted {
@@ -735,6 +830,17 @@
         width: 170px;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      .image-slideshow__frame {
+        animation: none;
+      }
+
+      .image-slideshow__frame:first-child {
+        opacity: 1;
+        transform: none;
+      }
+    }
   </style>
 </head>
 
@@ -756,11 +862,10 @@
     <div class="top-split">
       <div class="top-split-left">
         <div class="hero-content">
-          <h1>Ihr Personaldienstleister f&#252;r <br>kaufm&#228;nnische Fach- &amp; F&#252;hrungskr&#228;fte im
-            Ruhrgebiet</h1>
+          <h1>Ihr Experte für erfolgreiche Personalvermittlung - Technische Fach- & Führungskräfte im Ruhrgebiet</h1>
           <p class="lead">
             Wir besetzen Ihre individuellen Vakanzen. Gezielte Suche und flexible L&#246;sungen f&#252;r Ihren Bedarf.
-            Mit uns zum Volltreffer bei Ihrer Personalsuche
+            Wir sorgen für das perfekte Matching zwischen Unternehmen und Fach- und Führungskräften in Ihrer Region.
           </p>
         </div>
 
@@ -778,13 +883,13 @@
                 </svg>
               </div>
               <div class="text">
-                <p>Lernen Sie Ihren neuen Mitarbeiter im kaufm&#228;nnischen Bereich kennen:</p>
+                <p>Lernen Sie qualifizierte Kandidaten im technischen Bereich kennen:</p>
                 <ul class="sub-list">
-                  <li>Office: Vertriebsinnendienst, Customer Service, Auftragssachbearbeitung, Assistenz, Einkauf,
-                    Personalwesen, Empfang, Export, Logistik</li>
-                  <li>Buchhaltung: Finanzbuchhalter, Kreditorenbuchhalter, Debitorenbuchhalter Bilanzbuchhalter,
-                    Lohnbuchhalter, Controller
-                  </li>
+                  <li>Mechaniker: Industriemechaniker, Zerspanungsmechaniker, Mechatroniker,
+                    Konstruktionsmechaniker, Verfahrensmechaniker</li>
+                  <li>Elektroniker: Elektroniker Betriebstechnik, Elektroniker Automatisierungstechnik,
+                    Elektroniker Energie- und Gebäudetechnik, Elektriker</li>
+                  <li>Ingenieure: Maschinenbauingenieur, Elektroingenieur, Konstrukteur</li>
                 </ul>
               </div>
             </li>
@@ -838,8 +943,7 @@
                 </svg>
               </div>
               <div class="text">
-                <p>Durch unsere Erfahrung und unser stetig wachsendes Netzwerk rekrutieren wir f&#252;r Sie passgenaue
-                  Kandidaten f&#252;r Ihre Projekte.</p>
+                <p>Sie können klar durchstrukturierte Prozesse und gezieltere Vorauswahl der Kandidaten erwarten.</p>
               </div>
             </li>
 
@@ -866,8 +970,8 @@
                 </svg>
               </div>
               <div class="text">
-                <p>Acht von zehn vermittelten Kandidaten bleiben langfristig im Kundenbetrieb
-                  besch&#228;ftigt.</p>
+                <p>GALDORA ist Ihre Personalvermittlung für Essen, Duisburg, Dortmund, Oberhausen,
+                  Bochum, Mülheim an der Ruhr, Hagen und Gelsenkirchen</p>
               </div>
             </li>
           </ul>
@@ -910,7 +1014,7 @@
             <div class="two">
               <div class="field">
                 <label for="role">Gesuchte Position</label>
-                <input id="role" name="role" type="text" placeholder="z. B. Sachbearbeiter, IT-Admin" />
+                <input id="role" name="role" type="text" placeholder="z. B. Mechaniker, Elektroniker" />
               </div>
 
               <div class="field">
@@ -981,62 +1085,40 @@
           <article class="card" style="text-align: center;">
             <div style="margin-bottom: 18px; display: flex; justify-content: center;">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="46"
-                x="0" y="0" viewBox="0 0 682.667 682.667" style="enable-background:new 0 0 512 512" xml:space="preserve"
+                x="0" y="0" viewBox="0 0 500 500" style="enable-background:new 0 0 512 512" xml:space="preserve"
                 class="">
                 <g>
-                  <defs>
-                    <clipPath id="a" clipPathUnits="userSpaceOnUse">
-                      <path d="M0 512h512V0H0Z" fill="#152348" opacity="1"></path>
-                    </clipPath>
-                  </defs>
-                  <g clip-path="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 682.667)">
-                    <path d="M0 0c0-82.843-67.157-150-150-150S-300-82.843-300 0s67.157 150 150 150S0 82.843 0 0Z"
-                      style="stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-                      transform="translate(406 256)" fill="none" stroke="#152348" stroke-width="30"
-                      stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none"
-                      stroke-opacity="" opacity="1" class=""></path>
-                    <path d="m0 0-90-90-60 60"
-                      style="stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-                      transform="translate(331 301)" fill="none" stroke="#152348" stroke-width="30"
-                      stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none"
-                      stroke-opacity="" opacity="1" class=""></path>
-                    <path
-                      d="M0 0c11.212 9.55 27.696 9.55 38.908 0l38.983-34.405L143.86-29.3c14.684 1.136 28.021-8.553 31.477-22.869l13.226-54.776 57.639-34.502c12.547-7.712 17.641-23.39 12.023-37.003l-22.771-55.177 22.771-55.177c5.618-13.614.524-29.292-12.023-37.004l-57.639-34.502-13.226-54.776c-3.456-14.315-16.793-24.005-31.477-22.869l-65.324 5.056-39.628-34.776c-11.212-9.55-27.696-9.55-38.908 0l-39.628 34.776-65.324-5.056c-14.684-1.136-28.021 8.554-31.477 22.869l-13.279 54.993-57.542 34.285c-12.548 7.712-17.642 23.39-12.023 37.004l22.77 55.177-22.77 55.177c-5.619 13.613-.525 29.291 12.023 37.003l52.61 31.255 18.211 58.023c3.456 14.316 16.793 24.005 31.477 22.869l65.97-5.105z"
-                      style="stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-                      transform="translate(236.546 489.837)" fill="none" stroke="#152348" stroke-width="30"
-                      stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="none"
-                      stroke-opacity="" opacity="1" class=""></path>
-                  </g>
+                  <path
+                    d="M162.3 128.6c.6-4.2 4.4-7.1 8.6-6.6 4.2.6 7.1 4.4 6.5 8.6l-4.1 30.2c-.5 4.2-4.4 7.1-8.6 6.6-4.2-.6-7.1-4.4-6.6-8.6zm-74 14.8c-1.6-3.9.3-8.4 4.2-10s8.4.3 10 4.2l11.5 28.2c1.6 3.9-.3 8.4-4.2 10s-8.4-.3-10-4.2zm-56.6 49.8c-3.3-2.6-4-7.4-1.4-10.7s7.4-4 10.7-1.4l24.1 18.7c3.3 2.6 4 7.4 1.4 10.7s-7.4 3.9-10.7 1.4zm149.5 192.6 28.9 28.9c13.3 13.3 13.3 34.9 0 48.2s-34.9 13.3-48.2 0l-29-28.9-7.9 7.9c-13.3 13.3-34.9 13.3-48.2 0s-13.3-34.9 0-48.2l8-8-7-7c-29.1-29.1-37.5-67.1-22.7-103.2 17.3-42 63-68.7 108.1-58.7 16.8 3.7 33.5 12.6 48.7 27.8l7 7 37.7-37.7c-4.3-4.3-7.5-7.4-11.8-12.2-25.2-28.6-32-65.5-17.1-99.6 3.2-7.4 7.3-14.3 12.2-20.7L226 67.5c-4.1-4.1-2.5-11.4 3.8-12.9l101.8-27.3c5.7-1.5 10.9 3.7 9.3 9.5l-27.3 102c-1.5 5.7-8.7 7.5-12.8 3.4l-11.4-11.4c-3.3 9.5-.2 18.9 6.9 26.4l8.5 8.5 57.5-57.5-17.4-17.4c-4.1-4.1-2.5-11.4 3.8-12.9l112.9-30.3c5.7-1.5 10.9 3.7 9.3 9.5l-30.3 113.2c-1.5 5.7-8.7 7.5-12.8 3.4l-17.4-17.3L353 214l7 7c29.1 29.1 37.5 67.1 22.7 103.2-17.3 42-63 68.7-108.1 58.7-16.8-3.7-33.5-12.6-48.7-27.8l-7-7zm-37.4 37.4 28.9 28.9c11.8 11.8 32.1 3.4 32.1-13.3 0-4.8-1.8-9.6-5.5-13.3l-28.9-28.9zm85.9-160.7 26.6 26.6 148.9-148.8c3-3 7.8-3 10.8 0l13.4 13.4L452.9 66l-87.7 23.5 13.4 13.4c3 3 3 7.8 0 10.8zm37.4 37.4c6.9 6.9 12.6 13.6 21.6 16 11.4 2.9 22.2-3.5 28.3-12.5 8-11.7 4.8-24.1-5.2-34.1l-7-7zm48.5-48.5c9.6 9.6 16 15.1 19.8 28.3 2.4 8.3 1.4 17.2-1.5 24.3-4.6 11-14 20.4-25 25-15.9 6.6-32.8 1.5-45.6-11.3L201 255.5c-24.6-24.7-56-32-86.5-19.4-34.9 14.4-58 52.8-49.6 90.7 3.1 14 10.6 28.1 23.7 41.2l7 7 26.6-26.6-7-7c-18.4-18.4-18.8-43-1.2-60.6 17.5-17.5 42.1-17.2 60.5 1.2l62.2 62.2c24.6 24.7 56 32 86.5 19.4 34.9-14.4 58-52.8 49.6-90.7-3.1-14-10.6-28.1-23.7-41.2l-7-7zM208 337.3l-26.6-26.6-93.9 93.8c-11.8 11.8-3.4 32.1 13.3 32.1 4.8 0 9.6-1.8 13.3-5.5zm-37.4-37.4c-6.9-6.8-12.6-13.6-21.6-15.9-11.4-2.9-22.2 3.5-28.3 12.5-7.8 11.5-5 23.9 5.2 34.1l7 7zm123.3-123.3c-7.8-7.8-14.7-13.7-18.8-24.5-3.6-9.4-3.2-18.8.4-27.8 1.2-3.1 4.4-9.1 6.7-11.3 3-3 7.8-3 10.8 0l9.2 9.1 20.5-76.5-76.5 20.5 9.5 9.5c2.8 2.8 3 7.4.3 10.5-18.8 21.1-26.1 50.3-16.5 77.6 4.1 11.7 11.4 23 21 32.5l7 7z"
+                    fill="#152348" opacity="1"></path>
                 </g>
               </svg>
             </div>
-            <h3>Qualit&#228;t und Konstanz</h3>
-            <p>Vertrauen Sie auf eine langfristige Partnerschaft mit einem festen Ansprechpartner f&#252;r Ihre
-              Personalfragen.</p>
+            <h3>Maximale Flexibilit&#228;t</h3>
+            <p>Nutzen Sie verschiedene Personalmodelle aus einer Hand, passend zu Ihren Bed&#252;rfnissen.</p>
           </article>
 
           <article class="card" style="text-align: center;">
             <div style="margin-bottom: 18px; display: flex; justify-content: center;">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="46"
-                x="0" y="0" viewBox="0 0 64 64" style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"
+                class="">
                 <g>
-                  <g data-name="Give Time">
-                    <path
-                      d="M61.687 26.451a4.316 4.316 0 0 0-4.493.218l-14.5 9.667A4.992 4.992 0 0 0 38 33H17a1 1 0 0 0-.707.293L10 39.586l-1.293-1.293a1 1 0 0 0-1.414 0l-5 5a1 1 0 0 0 0 1.414L3.586 46 .293 49.293a1 1 0 1 0 1.414 1.414L5 47.414 16.586 59l-3.293 3.293a1 1 0 1 0 1.414 1.414L18 60.414l1.293 1.293a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0 0-1.414L24.414 54l3-3H39a.997.997 0 0 0 .6-.2l22.65-16.987A4.4 4.4 0 0 0 64 30.311a4.315 4.315 0 0 0-2.313-3.86ZM20 59.586 4.414 44 8 40.414 23.586 56Zm41.05-27.373L38.667 49H27a1 1 0 0 0-.707.293L23 52.586 11.414 41l6-6H38a3 3 0 0 1 0 6H25a1 1 0 0 0 0 2h13a4.99 4.99 0 0 0 4.942-4.426l15.362-10.241A2.377 2.377 0 0 1 62 30.311a2.391 2.391 0 0 1-.95 1.902ZM21.14 31a1 1 0 0 0 .891-1.453A18.716 18.716 0 0 1 20 21a19 19 0 0 1 38 0 17.385 17.385 0 0 1-.094 1.864 1 1 0 1 0 1.989.212A19.29 19.29 0 0 0 60 21a21 21 0 0 0-42 0 20.69 20.69 0 0 0 2.248 9.453.998.998 0 0 0 .893.547Z"
-                      fill="#152348" opacity="1"></path>
-                    <path
-                      d="M54.303 25.802a1.001 1.001 0 0 0 1.209-.735A17.002 17.002 0 1 0 22 21a16.987 16.987 0 0 0 2.932 9.56 1 1 0 1 0 1.656-1.12A15.004 15.004 0 1 1 54 21a15.202 15.202 0 0 1-.432 3.593 1 1 0 0 0 .735 1.209Z"
-                      fill="#152348" opacity="1"></path>
-                    <path
-                      d="M39 11a1 1 0 0 0 1-1V9a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1ZM32.5 9.742a1 1 0 0 0-.366 1.366l.5.866a1 1 0 0 0 1.732-1l-.5-.866a1 1 0 0 0-1.366-.366ZM29.974 14.634l-.867-.5a1 1 0 1 0-1 1.732l.867.5a1 1 0 1 0 1-1.732ZM29 21a1 1 0 0 0-1-1h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1ZM28.608 28a.994.994 0 0 0 .5-.134l.866-.5a1 1 0 1 0-1-1.732l-.867.5A1 1 0 0 0 28.608 28ZM44.134 31.892a1 1 0 0 0 .867.5 1 1 0 0 0 .865-1.5l-.5-.866a1 1 0 0 0-1.732 1ZM48.026 27.366l.867.5a1 1 0 0 0 1-1.732l-.867-.5a1 1 0 1 0-1 1.732ZM52 21a1 1 0 0 0-1-1h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1ZM48.527 16.5a.994.994 0 0 0 .5-.134l.866-.5a1 1 0 1 0-1-1.732l-.867.5a1 1 0 0 0 .501 1.866ZM45.5 9.742a.999.999 0 0 0-1.366.366l-.5.866a1 1 0 0 0 1.732 1l.5-.866a1 1 0 0 0-.366-1.366ZM38 21a1 1 0 0 0 1 1h5a1 1 0 0 0 0-2h-4v-6a1 1 0 0 0-2 0Z"
-                      fill="#152348" opacity="1"></path>
-                  </g>
+                  <path
+                    d="M256 100c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zM90 280c5.52 0 10-4.48 10-10s-4.48-10-10-10-10 4.48-10 10 4.48 10 10 10zm0 0"
+                    fill="#152348" opacity="1"></path>
+                  <path
+                    d="M336 0c-90.027 0-163.918 62.07-169.633 140.254C80.63 144.554 0 206.379 0 290c0 34.945 13.828 68.805 39 95.633 4.98 20.531-1.066 42.293-16.07 57.297A9.998 9.998 0 0 0 30 460c28.52 0 56.004-11.184 76.426-30.89C126.32 435.89 152.277 440 176 440c90.016 0 163.898-62.055 169.629-140.223 20.937-.93 42.715-4.797 59.945-10.668C425.996 308.816 453.48 320 482 320a9.998 9.998 0 0 0 7.07-17.07c-15.004-15.004-21.05-36.766-16.07-57.297 25.172-26.828 39-60.688 39-95.633C512 63.113 425.16 0 336 0zM176 420c-23.602 0-50.496-4.633-68.512-11.8a10 10 0 0 0-11.078 2.538c-12.074 13.2-27.773 22.403-44.879 26.633a80.872 80.872 0 0 0 6.098-59.52 9.98 9.98 0 0 0-2.445-4.226C32.496 350.258 20 320.559 20 290c0-70.469 71.438-130 156-130 79.852 0 150 55.527 150 130 0 71.684-67.29 130-150 130zm280.816-186.375a10.027 10.027 0 0 0-2.445 4.227 80.872 80.872 0 0 0 6.098 59.52c-17.106-4.227-32.805-13.435-44.88-26.634a10.007 10.007 0 0 0-11.077-2.539c-15.614 6.211-37.887 10.512-58.914 11.551-2.922-37.816-21.786-73.36-54.036-99.75H422c5.523 0 10-4.477 10-10s-4.477-10-10-10H260.84c-22.7-11.555-48.188-18.293-74.422-19.707C192.164 73.129 257.058 20 336 20c84.563 0 156 59.531 156 130 0 30.559-12.496 60.258-35.184 83.625zm0 0"
+                    fill="#152348" opacity="1"></path>
+                  <path
+                    d="M256 260H130c-5.523 0-10 4.477-10 10s4.477 10 10 10h126c5.523 0 10-4.477 10-10s-4.477-10-10-10zM256 320H90c-5.523 0-10 4.477-10 10s4.477 10 10 10h166c5.523 0 10-4.477 10-10s-4.477-10-10-10zM422 100H296c-5.523 0-10 4.477-10 10s4.477 10 10 10h126c5.523 0 10-4.477 10-10s-4.477-10-10-10zm0 0"
+                    fill="#152348" opacity="1"></path>
                 </g>
               </svg>
             </div>
-            <h3>Zeit f&#252;r Sie</h3>
-            <p>Wir nehmen uns Zeit f&#252;r detaillierte Gespr&#228;che, um Ihre Anforderungen genau zu verstehen und
-              umzusetzen.</p>
+            <h3>Offene Kommunikation</h3>
+            <p>Bleiben Sie jederzeit auf dem Laufenden durch kontinuierliche und offene Kommunikation w&#228;hrend des
+              gesamten Prozesses.</p>
           </article>
 
           <article class="card" style="text-align: center;">
@@ -1144,6 +1226,17 @@
       </div>
     </section>
 
+    <section class="image-slideshow" aria-label="GALDORA Impressionen">
+      <span class="image-slideshow__frame" aria-hidden="true"></span>
+      <span class="image-slideshow__frame" aria-hidden="true"></span>
+      <span class="image-slideshow__frame" aria-hidden="true"></span>
+      <span class="image-slideshow__frame" aria-hidden="true"></span>
+      <span class="image-slideshow__frame" aria-hidden="true"></span>
+      <span class="image-slideshow__frame" aria-hidden="true"></span>
+      <span class="image-slideshow__frame" aria-hidden="true"></span>
+      <span class="image-slideshow__frame" aria-hidden="true"></span>
+    </section>
+
     <section>
       <div class="container">
         <div class="cta-strip">
@@ -1222,7 +1315,7 @@
     </div>
   </footer>
   <script>
-    const WEBHOOK_URL = 'https://lennyys.app.n8n.cloud/webhook/c7f2c55d-c880-42f1-87fb-42244ca44d07';
+    const WEBHOOK_URL = 'https://lennyys.app.n8n.cloud/webhook/e6717eaf-5579-4a55-a131-f859d7b2bd72';
 
     document.getElementById('lead-form').addEventListener('submit', async function (e) {
       e.preventDefault();
