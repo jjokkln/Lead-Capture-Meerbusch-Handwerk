@@ -4,14 +4,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Consent Mode v2 — Default: alle Tracking-Zwecke denied, bis der Nutzer zustimmt -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TSJRWX3M');</script>
+  <!-- End Google Tag Manager -->
+
   <title>Personalvermittlung &amp; Zeitarbeit NRW | GALDORA Meerbusch</title>
+  <link rel="canonical" href="https://galdora-technisches-personal.de/" />
   <meta name="description"
-    content="GALDORA &#8211; Personaldienstleister f&#252;r Zeitarbeit, Direktvermittlung &amp; Headhunting im Ruhrgebiet. Fachkr&#228;fte f&#252;r Handwerk &amp; Industrie in Essen, Duisburg, D&#252;sseldorf und ganz NRW. Jetzt kostenfrei anfragen." />
+    content="GALDORA &#8211; Personaldienstleister f&#252;r Zeitarbeit, Direktvermittlung &amp; Headhunting im Ruhrgebiet. Fachkr&#228;fte f&#252;r Handwerk &amp; Industrie in Essen, Duisburg und ganz NRW. Jetzt kostenfrei anfragen." />
   <meta name="robots" content="index, follow, max-snippet:160, max-image-preview:large" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://galdora-technisches-personal.de/" />
   <meta property="og:title" content="Personalvermittlung &amp; Zeitarbeit NRW | GALDORA Meerbusch" />
   <meta property="og:description" content="GALDORA &#8211; Ihr Personaldienstleister f&#252;r Handwerk &amp; Industrie in NRW. Zeitarbeit, Direktvermittlung &amp; Headhunting im Ruhrgebiet. Jetzt anfragen." />
-  <meta property="og:image" content="galdora-logo.png" />
+  <meta property="og:image" content="https://galdora-technisches-personal.de/galdora-logo.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Personalvermittlung &amp; Zeitarbeit NRW | GALDORA Meerbusch" />
   <meta name="twitter:description" content="GALDORA &#8211; Ihr Personaldienstleister f&#252;r Handwerk &amp; Industrie in NRW. Zeitarbeit, Direktvermittlung &amp; Headhunting im Ruhrgebiet. Jetzt anfragen." />
@@ -24,8 +50,9 @@
     "url": "https://galdora-recruiting.de",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://galdora-recruiting.de/galdora-logo.png"
+      "url": "https://galdora-technisches-personal.de/galdora-logo.png"
     },
+    "image": "https://galdora-technisches-personal.de/galdora-logo.png",
     "telephone": "+4921598217570",
     "email": "bettercallus@galdora.de",
     "address": {
@@ -35,9 +62,14 @@
       "addressLocality": "Meerbusch",
       "addressCountry": "DE"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.2536,
+      "longitude": 6.6783
+    },
     "areaServed": [
-      "Meerbusch", "Düsseldorf", "Essen", "Duisburg", "Mülheim an der Ruhr",
-      "Moers", "Rheinberg", "Kamp-Lintfort", "Wesel", "Kleve", "Straelen",
+      "Essen", "Duisburg", "Mülheim an der Ruhr",
+      "Moers", "Rheinberg", "Kamp-Lintfort", "Wesel", "Kleve",
       "Dortmund", "Bochum", "Gelsenkirchen", "Oberhausen", "Hagen", "Dinslaken",
       "Hamm", "Bottrop", "Gladbeck", "Unna", "Marl", "Witten", "Dorsten",
       "Nordrhein-Westfalen"
@@ -53,6 +85,55 @@
       "Handwerk", "Elektrotechnik", "Mechatronik", "Automatisierungstechnik",
       "Industriefachkräfte", "Technische Führungskräfte",
       "Kaufmännische Fachkräfte", "IT-Fachkräfte"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Welche Personalmodelle bietet GALDORA an?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GALDORA besetzt Vakanzen über direkte Personalvermittlung (Direktvermittlung), Arbeitnehmerüberlassung (Zeitarbeit) und Try & Hire – passend zu Ihrem Bedarf."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was kostet die Zusammenarbeit mit GALDORA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wir arbeiten erfolgsbasiert: Sie zahlen nur bei erfolgreicher Vermittlung oder Überlassung. So investieren Sie direkt in Ihren Besetzungserfolg."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Fach- und Führungskräfte vermittelt GALDORA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Technische Fach- und Führungskräfte für Handwerk und Industrie: Mechaniker (Industrie-, Zerspanungs-, Mechatroniker, Konstruktions- und Verfahrensmechaniker), Elektroniker (Betriebs-, Automatisierungs-, Energie- und Gebäudetechnik) sowie Ingenieure (Maschinenbau, Elektrotechnik, Konstruktion)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "In welcher Region ist GALDORA tätig?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Im Ruhrgebiet und in ganz Nordrhein-Westfalen – u. a. Essen, Duisburg, Dortmund, Oberhausen, Bochum, Mülheim an der Ruhr, Hagen und Gelsenkirchen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie hoch ist die Übernahmequote bei Zeitarbeit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rund 78 % unserer Zeitarbeitskräfte werden in eine Festanstellung beim Einsatzunternehmen übernommen."
+        }
+      }
     ]
   }
   </script>
@@ -183,7 +264,7 @@
       min-height: 100vh;
       background-image:
         linear-gradient(rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.64)),
-        url('Hero-background.png');
+        url('slideshow-assets-handwerk/Hero-background.webp');
       background-position: center, 50% center;
       background-size: auto, cover;
       background-repeat: repeat, no-repeat;
@@ -443,12 +524,12 @@
     }
 
     .image-slideshow__frame:nth-child(2) {
-      background-image: url('slideshow-assets-handwerk/josh-beech-tXJhAFVOHVk-unsplash.jpg');
+      background-image: url('slideshow-assets-handwerk/josh-beech-tXJhAFVOHVk-unsplash.webp');
       animation-delay: 4s;
     }
 
     .image-slideshow__frame:nth-child(3) {
-      background-image: url('slideshow-assets-handwerk/Ausbildung-Industriemechaniker.jpg');
+      background-image: url('slideshow-assets-handwerk/Ausbildung-Industriemechaniker.webp');
       animation-delay: 8s;
     }
 
@@ -458,12 +539,12 @@
     }
 
     .image-slideshow__frame:nth-child(5) {
-      background-image: url('slideshow-assets-handwerk/josh-beech-tXJhAFVOHVk-unsplash.jpg');
+      background-image: url('slideshow-assets-handwerk/josh-beech-tXJhAFVOHVk-unsplash.webp');
       animation-delay: 16s;
     }
 
     .image-slideshow__frame:nth-child(6) {
-      background-image: url('slideshow-assets-handwerk/Ausbildung-Industriemechaniker.jpg');
+      background-image: url('slideshow-assets-handwerk/Ausbildung-Industriemechaniker.webp');
       animation-delay: 20s;
     }
 
@@ -473,7 +554,7 @@
     }
 
     .image-slideshow__frame:nth-child(8) {
-      background-image: url('slideshow-assets-handwerk/josh-beech-tXJhAFVOHVk-unsplash.jpg');
+      background-image: url('slideshow-assets-handwerk/josh-beech-tXJhAFVOHVk-unsplash.webp');
       animation-delay: 28s;
     }
 
@@ -1008,10 +1089,83 @@
       line-height: 1.8;
       text-align: center;
     }
+
+    .consent-banner {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 9999;
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--blue);
+      color: white;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.35);
+      padding: 22px 24px;
+      display: none;
+    }
+
+    .consent-banner.is-visible {
+      display: block;
+    }
+
+    .consent-banner p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.92);
+      margin: 0 0 16px;
+    }
+
+    .consent-banner a {
+      color: white;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+
+    .consent-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .consent-btn {
+      border: 0;
+      border-radius: 3px;
+      padding: 11px 20px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .consent-btn.accept {
+      background: white;
+      color: var(--blue);
+    }
+
+    .consent-btn.accept:hover {
+      background: #f3f5f9;
+    }
+
+    .consent-btn.decline {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .consent-btn.decline:hover {
+      border-color: white;
+    }
   </style>
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSJRWX3M" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header>
     <div class="container nav">
       <a href="https://galdora-recruiting.de/" class="brand" aria-label="GALDORA Recruiting">
@@ -1530,7 +1684,7 @@ Die Vermittlung war zielgerichtet, das Team freundlich und zuverlässig.  Ich ka
 
     <div class="footer-regions">
       <div class="container">
-        <p>Personalvermittlung &middot; Zeitarbeit &middot; Direktvermittlung &middot; Arbeitnehmer&#252;berlassung &middot; Headhunter &middot; Recruiting &middot; Active Sourcing &middot; Personalberatung &middot; Interim Management &middot; HR Consulting &middot; Karriereberatung &middot; Leiharbeit &middot; Kaufm&#228;nnisch &middot; IT &middot; F&#252;hrungskr&#228;fte &middot; NRW &middot; Essen &middot; Duisburg &middot; M&#252;lheim a.d.R. &middot; Moers &middot; D&#252;sseldorf &middot; Dortmund &middot; Bochum &middot; Gelsenkirchen &middot; Oberhausen &middot; Hagen &middot; Dinslaken &middot; Rheinberg &middot; Kamp-Lintfort &middot; Wesel &middot; Kleve &middot; Straelen &middot; Hamm &middot; Bottrop &middot; Gladbeck &middot; Unna &middot; Marl &middot; Witten &middot; Dorsten</p>
+        <p>Personalvermittlung &middot; Zeitarbeit &middot; Direktvermittlung &middot; Arbeitnehmer&#252;berlassung &middot; Headhunter &middot; Recruiting &middot; Active Sourcing &middot; Personalberatung &middot; Interim Management &middot; HR Consulting &middot; Karriereberatung &middot; Leiharbeit &middot; Kaufm&#228;nnisch &middot; F&#252;hrungskr&#228;fte &middot; NRW &middot; Essen &middot; Duisburg &middot; M&#252;lheim a.d.R. &middot; Moers &middot; Dortmund &middot; Bochum &middot; Gelsenkirchen &middot; Oberhausen &middot; Hagen &middot; Dinslaken &middot; Rheinberg &middot; Kamp-Lintfort &middot; Wesel &middot; Kleve &middot; Straelen &middot; Hamm &middot; Bottrop &middot; Gladbeck &middot; Unna &middot; Marl &middot; Witten &middot; Dorsten</p>
       </div>
     </div>
 
@@ -1545,6 +1699,21 @@ Die Vermittlung war zielgerichtet, das Team freundlich und zuverlässig.  Ich ka
       </div>
     </div>
   </footer>
+
+  <!-- Cookie-/Consent-Banner (Consent Mode v2) -->
+  <div id="consent-banner" class="consent-banner" role="dialog" aria-live="polite"
+    aria-label="Hinweis zu Cookies und Tracking">
+    <p>
+      Wir verwenden Cookies und Tracking-Tools (u. a. Google Analytics und Google Ads), um unsere Seite zu
+      verbessern und Marketing zu messen. Diese werden nur mit Ihrer Einwilligung geladen. Details in der
+      <a href="datenschutz.html">Datenschutzerkl&#228;rung</a>.
+    </p>
+    <div class="consent-actions">
+      <button type="button" class="consent-btn accept" id="consent-accept">Alle akzeptieren</button>
+      <button type="button" class="consent-btn decline" id="consent-decline">Nur notwendige</button>
+    </div>
+  </div>
+
   <script>
     const WEBHOOK_URL = 'https://lennyys.app.n8n.cloud/webhook/e6717eaf-5579-4a55-a131-f859d7b2bd72';
 
@@ -1579,6 +1748,9 @@ Die Vermittlung war zielgerichtet, das Team freundlich und zuverlässig.  Ich ka
         if (res.ok) {
           document.getElementById('lead-form').style.display = 'none';
           document.getElementById('form-success').style.display = 'block';
+          // Conversion-Signal an GTM (dort als GA4-Event + Google-Ads-Conversion mappen)
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'generate_lead', form_id: 'lead-form' });
         } else {
           throw new Error('Server error');
         }
@@ -1588,6 +1760,44 @@ Die Vermittlung war zielgerichtet, das Team freundlich und zuverlässig.  Ich ka
         btn.textContent = 'Anfrage absenden';
       }
     });
+
+    // --- Consent-Banner (Consent Mode v2) ---
+    (function () {
+      const STORAGE_KEY = 'galdora_consent';
+      const banner = document.getElementById('consent-banner');
+
+      function gtag() { window.dataLayer.push(arguments); }
+
+      function applyConsent(granted) {
+        const state = granted ? 'granted' : 'denied';
+        gtag('consent', 'update', {
+          ad_storage: state,
+          ad_user_data: state,
+          ad_personalization: state,
+          analytics_storage: state
+        });
+      }
+
+      function setChoice(granted) {
+        try { localStorage.setItem(STORAGE_KEY, granted ? 'granted' : 'denied'); } catch (e) { }
+        applyConsent(granted);
+        banner.classList.remove('is-visible');
+      }
+
+      let stored = null;
+      try { stored = localStorage.getItem(STORAGE_KEY); } catch (e) { }
+
+      if (stored === 'granted') {
+        applyConsent(true);
+      } else if (stored === 'denied') {
+        applyConsent(false);
+      } else {
+        banner.classList.add('is-visible');
+      }
+
+      document.getElementById('consent-accept').addEventListener('click', function () { setChoice(true); });
+      document.getElementById('consent-decline').addEventListener('click', function () { setChoice(false); });
+    })();
   </script>
 </body>
 
