@@ -841,6 +841,112 @@
         transform: none;
       }
     }
+
+    .ref-sub-label {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin: 0 0 18px;
+    }
+
+    .ref-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .ref-stars {
+      color: #f59e0b;
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
+
+    .ref-quote {
+      font-size: 14.5px;
+      color: var(--text);
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    .ref-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    .ref-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .ref-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .ref-role {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .ref-kunden-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .ref-kunden-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .ref-kunden-quote {
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .ref-kunden-company {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .ref-kunden-type {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    @media (max-width: 860px) {
+      .ref-kunden-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -1222,6 +1328,64 @@
             <p>Wir identifizieren, interviewen und präsentieren Ihnen ausgewählte Kandidaten. Sie wählen Ihre
               Favoriten - Wir koordinieren die Bewerbungsgespräche.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="referenzen" class="section-muted">
+      <div class="container">
+        <div class="section-head">
+          <h2>Was Kunden &amp; Kandidaten sagen</h2>
+          <p>Echte Erfahrungen &#8211; von Menschen, die wir erfolgreich begleitet haben.</p>
+        </div>
+
+        <p class="ref-sub-label">Kandidatenreferenzen</p>
+        <div class="ref-kunden-grid" style="margin-bottom: 52px;">
+          <div class="ref-card">
+            <div class="ref-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="ref-quote">GALDORA hat mir geholfen, meinen Traumjob als Elektroniker zu finden, ist dabei auf meine individuellen Wünsche und Bedürfnisse eingegangen und stand mir jederzeit mit Rat und Tat zur Seite.
+Ohne Sie wäre ich auf meinen jetzigen Arbeitgeber nicht aufmerksam geworden</p>
+            <div class="ref-author">
+              <div class="ref-avatar">AM</div>
+              <div>
+                <div class="ref-name">Martin S.</div>
+                <div class="ref-role">Kandidat</div>
+              </div>
+            </div>
+          </div>
+          <div class="ref-card">
+            <div class="ref-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="ref-quote">Dank GALDORA habe ich eine passende Stelle als Mechatroniker gefunden. Der Start erfolgte über Zeitarbeit mit anschließender Übernahme.
+Die Vermittlung war zielgerichtet, das Team freundlich und zuverlässig.  Ich kann GALDORA jedem empfehlen, der eine neue berufliche Perspektive sucht.</p>
+            <div class="ref-author">
+              <div class="ref-avatar">LB</div>
+              <div>
+                <div class="ref-name"> Christoph Z.</div>
+                <div class="ref-role">Kandidat</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="ref-sub-label">Kundenreferenzen</p>
+        <div class="ref-kunden-grid">
+          <div class="ref-kunden-card">
+            <div class="ref-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="ref-kunden-quote">Seit vielen Jahren arbeiten wir erfolgreich mit GALDORA zusammen. Besonders schätzen wir die hohe Professionalität, die schnelle Reaktionsfähigkeit und die zuverlässige Besetzung unserer Vakanzen. Die Zusammenarbeit ist stets vertrauensvoll, lösungsorientiert und von einem hohen Qualitätsanspruch geprägt. Für uns ist GALDORA ein verlässlicher Partner, auf den wir uns jederzeit verlassen können.</p>
+            <div>
+              <div class="ref-kunden-company">Mittelständisches Automatisierungsunternehmen in Duisburg</div>
+              <div class="ref-kunden-type">Unternehmensreferenz</div>
+            </div>
+          </div>
+          <div class="ref-kunden-card">
+            <div class="ref-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="ref-kunden-quote">Was uns an der Zusammenarbeit besonders überzeugt, ist die Transparenz in allen Prozessen sowie die offene und ehrliche Kommunikation. Wir werden jederzeit umfassend informiert und fühlen uns hervorragend betreut. Die Qualität der vorgeschlagenen Kandidaten ist konstant hoch und entspricht unseren Anforderungen. Eine professionelle Dienstleistung, die wir gerne weiterempfehlen.</p>
+            <div>
+              <div class="ref-kunden-company">Hersteller von elektronischen Komponenten in Ratingen
+</div>
+              <div class="ref-kunden-type">Unternehmensreferenz</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
